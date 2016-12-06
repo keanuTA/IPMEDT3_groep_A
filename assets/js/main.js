@@ -24,12 +24,11 @@ $(document).ready(function () {
     
     var panonoBalText = document.getElementById('panonoBalText');
     var bal = document.getElementById('bal');
+    var text = document.getElementsByClassName('text')
     
     bal.addEventListener('mouseenter', function () {
-        $(bank_kamer).attr('visible', true);
-        $(bank_kamer_links).attr('visible', false);
-        $(bank_kamer_rechts).attr('visible', false);
-    })
+        document.getElementById("panonoBalText").setAttribute('visible', 'false')
+    });
 
 
     //kleur van het behang kiezen

@@ -13,6 +13,7 @@
         <script type = "text/javascript" src= "assets/js/main.js"></script>
         <script type = "text/javascript" src= "assets/js/aframe.min.js"></script>
         <script src="https://rawgit.com/bryik/aframe-bmfont-text-component/master/dist/aframe-bmfont-text-component.min.js"></script>
+        <script src="assets/js/hidetoggle.js"></script>
         <link rel = "stylesheet" type="text/css" href= "assets/css/stylesheet.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     </head>
@@ -26,14 +27,14 @@
 
             <a-plane color="grey" width="50" height="50"  rotation="-90 0 0"></a-plane>
 
-            <a-entity id="panonoBalText"
-                <a-entity bmfont-text="text: Hello World;" position="3.5 6 -10" scale="5 5"></a-entity>
-                <a-entity bmfont-text="text: Hello World2;" position="3.5 8 -10" scale="5 5"></a-entity>
-                <a-entity bmfont-text="text: Hello World3;" position="3.5 10 -10" scale="5 5"></a-entity>
-                <a-entity bmfont-text="text: Hello World4;" position="3.5 12 -10" scale="5 5"></a-entity>
+            <a-entity id="panonoBalText">
+                <a-entity class="text" bmfont-text="text: Hello World;" position="3.5 6 -10" scale="5 5"></a-entity>
+                <a-entity class="text" bmfont-text="text: Hello World2;" position="3.5 8 -10" scale="5 5"></a-entity>
+                <a-entity class="text" bmfont-text="text: Hello World3;" position="3.5 10 -10" scale="5 5"></a-entity>
+                <a-entity class="text" bmfont-text="text: Hello World4;" position="3.5 12 -10" scale="5 5"></a-entity>
             </a-entity>
 
-                <a-obj-model class="bal" src=assets/img/panono.obj mtl=assets/img/panono.mtl position="0.00 5 -10" scale="2 2 2">
+                <a-obj-model id="bal" src=assets/img/panono.obj mtl=assets/img/panono.mtl position="0.00 0 -10" scale="2 2 2">
                     <a-animation
                             attribute="rotation"
                             repeat="indefinite"
