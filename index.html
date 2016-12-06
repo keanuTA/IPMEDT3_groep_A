@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="Ties van der Meer">
+        <meta name= "viewport" content= "width=device-width, initial-scale=1.0">
+
+        <title>prototype 1</title>
+        <script type = "text/javascript" src= "assets/js/jquery-3.1.1.min.js"></script>
+        <script type = "text/javascript" src= "assets/js/main.js"></script>
+        <script type = "text/javascript" src= "assets/js/aframe.min.js"></script>
+        <script src="https://rawgit.com/bryik/aframe-bmfont-text-component/master/dist/aframe-bmfont-text-component.min.js"></script>
+        <link rel = "stylesheet" type="text/css" href= "assets/css/stylesheet.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    </head>
+
+    <body>
+        <a-scene inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js">
+
+            <a-entity id="camera" camera="userHeight: 5.6" look-controls position="0 0 0">
+                <a-cursor color="black"></a-cursor>
+            </a-entity>
+
+            <a-plane color="grey" width="50" height="50"  rotation="-90 0 0"></a-plane>
+
+            <a-entity id="panonoBal">
+                <a-sphere color="green" radius="2" position="0 4 -10"></a-sphere>
+                <a-entity bmfont-text="text: Hello World;" position="0 10 -10" scale="10 10"></a-entity>
+            </a-entity>
+
+            <a-assets>
+                <a-asset-item id="panonoBal-obj" src=assets/img/panono.obj position="0.00 10.60 -14.12"></a-asset-item>
+                <a-asset-item id="panonoBal-mtl" src=assets/img/panono.mtl position="0.00 10.60 -14.12"></a-asset-item>
+            </a-assets>
+
+
+
+            <!---<a-entity id="kamer">
+                <a-plane color="grey" width="50" height="50"  rotation="-90 0 0"></a-plane>
+                <a-box color="grey" width="50" height="50"  rotation="0 90 0" position="-25 0 0"></a-box>
+                <a-box color="grey" width="50" height="50"  rotation="0 90 0" position="25 0 0"></a-box>
+                <a-box color="grey" width="50" height="50"  rotation="0 180 90" position="0 0 -25"></a-box>
+            </a-entity>
+
+            <a-entity id="bank_kamer" position="-5 0 -13">
+                <a-box id="bank" width="1" height="5" depth="5" position="0 0 -10"></a-box>
+                <a-box id="bank" width="1" height="5" depth="5" position="10 0 -10"></a-box>
+                <a-box id="bank" width="10" height="10" depth="1" position="5 0 -11"></a-box>
+                <a-box id="bank" width="10" height="1" depth="10" position="5 0.5 -12.5"></a-box>
+            </a-entity>
+
+            <a-entity id="bank_kamer_links" position="-22 0 -13">
+                <a-box id="bank_links" width="1" height="5" depth="5" position="0 0 -10"></a-box>
+                <a-box id="bank_links" width="1" height="5" depth="5" position="10 0 -10"></a-box>
+                <a-box id="bank_links" width="10" height="10" depth="1" position="5 0 -11"></a-box>
+                <a-box id="bank_links" width="10" height="1" depth="10" position="5 0.5 -12.5"></a-box>
+            </a-entity>
+
+            <a-entity id="bank_kamer_rechts" position="12 0 -13">
+                <a-box id="bank_rechts" width="1" height="5" depth="5" position="0 0 -10"></a-box>
+                <a-box id="bank_rechts" width="1" height="5" depth="5" position="10 0 -10"></a-box>
+                <a-box id="bank_rechts" width="10" height="10" depth="1" position="5 0 -11"></a-box>
+                <a-box id="bank_rechts" width="10" height="1" depth="10" position="5 0.5 -12.5"></a-box>
+            </a-entity>
+
+
+            <a-box id="showbank_middle" color="black" width="2" height="2" depth="2" position="0 0 -10"></a-box>
+
+            <a-box id="showbank_rechts" color="black" width="2" height="2" depth="2" position="6 0 -10"></a-box>
+
+            <a-box id="showbank_links" color="black" width="2" height="2" depth="2" position="-6 0 -10"></a-box>
+
+            <!---Dit zijn de kleuren voor de banken
+
+            <a-box id="kleurRood" color="red" width="2" height="2" depth="2" position="-6 0 -6"></a-box>
+
+            <a-box id="kleurBlauw" color="blue" width="2" height="2" depth="2" position="-4 0 -6"></a-box>
+
+            <a-box id="kleurGroen" color="green" width="2" height="2" depth="2" position="-8 0 -6"></a-box>
+
+            <a-box id="kleurKamerWit" color="white" width="2" height="2" depth="2" position="-8 0 -2"></a-box>
+
+            <a-box id="kleurKamerGeel" color="yellow" width="2" height="2" depth="2" position="-6 0 -2"></a-box>
+
+            <a-box id="kleurKamerRoze" color="pink" width="2" height="2" depth="2" position="-4 0 -2"></a-box>---->
+
+           
+        </a-scene>
+
+    </body>
+</html>
