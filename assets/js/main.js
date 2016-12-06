@@ -21,6 +21,15 @@ $(document).ready(function () {
     var kleurKamerWit= document.getElementById('kleurKamerWit');
     var kleurKamerGeel= document.getElementById('kleurKamerGeel');
     var kleurKamerRoze= document.getElementById('kleurKamerRoze');
+    
+    var panonoBalText = document.getElementById('panonoBalText');
+    var bal = document.getElementById('bal');
+    
+    bal.addEventListener('mouseenter', function () {
+        $(bank_kamer).attr('visible', true);
+        $(bank_kamer_links).attr('visible', false);
+        $(bank_kamer_rechts).attr('visible', false);
+    })
 
 
     //kleur van het behang kiezen
