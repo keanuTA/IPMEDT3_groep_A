@@ -25,12 +25,38 @@ $(document).ready(function () {
     var panonoBalText = document.getElementById('panonoBalText');
     var bal = document.getElementById('bal');
     var text = document.getElementsByClassName('text')
+    var bergen = document.getElementById('bergen')
+    var showSky = document.getElementById('showSky')
+    var grond = document.getElementById('grond')
+
+    $(bergen).attr('visible', 'false')
+    $(panonoBalText).attr('visible', 'false')
+
+    showSky.addEventListener('mouseenter', function () {
+        $(bergen).attr('visible', 'true')
+        $(bal).attr('visible', 'false')
+        $(grond).attr('visible', 'false')
+        $(showSky).attr('visible', 'false')
+
+    })
     
     bal.addEventListener('mouseenter', function () {
+        document.getElementById("panonoBalText").setAttribute('visible', 'true')
+    });
+
+    bal.addEventListener('mouseleave', function () {
+        document.getElementById("panonoBalText").setAttribute('visible', 'false')
+        console.log("leave")
+    });
+
+    /*bank_kamer_links.addEventListener('mouseenter', function () {
         document.getElementById("panonoBalText").setAttribute('visible', 'false')
     });
 
-
+    bank_kamer_links.addEventListener('mouseleave', function () {
+        document.getElementById("panonoBalText").setAttribute('visible', 'true')
+        console.log("leave")
+    });
     //kleur van het behang kiezen
     /*kleurKamerWit.addEventListener('mouseenter', function () {
         for(i in kamer.children){
