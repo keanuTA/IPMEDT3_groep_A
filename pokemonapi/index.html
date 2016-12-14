@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="Ties van der Meer">
+        <meta name= "viewport" content= "width=device-width, initial-scale=1.0">
+
+        <title>les java 3</title>
+        <script type = "text/javascript" src= "assets/js/jquery-3.1.1.min.js"></script>
+        <script type = "text/javascript" src= "assets/js/main.js"></script>
+        <script type = "text/javascript" src= "assets/js/aframe.min.js"></script>
+        <script src="https://rawgit.com/ngokevin/aframe-text-component/master/dist/aframe-text-component.min.js"></script>
+        <script src="https://rawgit.com/bryik/aframe-bmfont-text-component/master/dist/aframe-bmfont-text-component.min.js"></script>
+        <script src="assets/js/hidetoggle.js"></script>
+        <link rel = "stylesheet" type="text/css" href= "assets/css/stylesheet.css">
+    </head>
+
+    <body>
+        <a-scene inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js">
+
+            <a-camera look-controls>
+                <a-cursor color = "white"></a-cursor>
+            </a-camera>
+
+            <a-sky color="white"></a-sky>
+            <a-box id="box1" data="/pokemon/" color="blue" position="2 2 -3"></a-box>
+            <a-box id="box2" data="/ability/" color="blue" position ="0 3 -3"></a-box>
+            <a-box id="box3" data="/ability/" color="blue" position ="-2 2 -3"></a-box>
+            <a-entity id="text" mixin="font" text="text: hello; color:white" position="-1 0 -7"></a-entity>
+
+
+
+        </a-scene>
+
+    </body>
+</html>pokr

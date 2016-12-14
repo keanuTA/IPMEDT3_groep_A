@@ -1,62 +1,128 @@
 /**
  * Created by tiess on 29-11-2016.
  */
-$(document).ready(function () {
 
-    var camera = document.getElementById('camera');
+$(function(){
+    var data;
+    var dataString;
 
-    var bank_kamer = document.getElementById('bank_kamer');
-    var bank_kamer_links = document.getElementById('bank_kamer_links');
-    var bank_kamer_rechts = document.getElementById('bank_kamer_rechts');
+    //events
+    document.getElementById('box1',).addEventListener('mouseenter',function()
+    {
 
-    var showbank_middle= document.getElementById('showbank_middle');
-    var showbank_rechts= document.getElementById('showbank_rechts');
-    var showbank_links= document.getElementById('showbank_links');
-    
-    
-    var kleurRood= document.getElementById('kleurRood');
-    var kleurBlauw= document.getElementById('kleurBlauw');
-    var kleurGroen= document.getElementById('kleurGroen');
+        getData(this);
 
-    var kleurKamerWit= document.getElementById('kleurKamerWit');
-    var kleurKamerGeel= document.getElementById('kleurKamerGeel');
-    var kleurKamerRoze= document.getElementById('kleurKamerRoze');
-    
-    var panonoBalText = document.getElementById('panonoBalText');
-    var bal = document.getElementById('bal');
-    var text = document.getElementsByClassName('text')
-    var bergen = document.getElementById('bergen')
-    var showSky = document.getElementById('showSky')
-    var grond = document.getElementById('grond')
+        $(this).attr('color','green');
 
-    $(bergen).attr('visible', 'false')
-    $(panonoBalText).attr('visible', 'false')
+    });
 
-    showSky.addEventListener('mouseenter', function () {
-        $(bergen).attr('visible', 'true')
-        $(bal).attr('visible', 'false')
-        $(grond).attr('visible', 'false')
-        $(showSky).attr('visible', 'false')
+    document.getElementById('box1').addEventListener('mouseleave',function()
+    {
+        $(this).attr('color','blue');
+    });
 
+    document.getElementById('box2',).addEventListener('mouseenter',function()
+    {
+
+        getData(this);
+
+        $(this).attr('color','green');
+
+    });
+
+    document.getElementById('box2').addEventListener('mouseleave',function()
+    {
+        $(this).attr('color','blue');
+    });
+
+    document.getElementById('box3',).addEventListener('mouseenter',function()
+    {
+
+        getData(this);
+
+        $(this).attr('color','green');
+
+    });
+
+    document.getElementById('box3').addEventListener('mouseleave',function()
+    {
+        $(this).attr('color','blue');
+    });
+
+    function getData(data)
+    {
+
+        switch (data.id)
+        {
+            case "box1":
+                ranNum = Math.floor((Math.random() * 90) + 1);
+                dataString = $(data).attr('data')  + ranNum.toString();
+                break;
+
+            case "box2":
+
+                ranNum = Math.floor((Math.random() * 140) + 1);
+                dataString = $(data).attr('data')  + ranNum.toString();
+                break;
+
+            case "box3":
+
+                dataString = $(data).attr('data')  + "1";
+
+                break;
+        }
+
+        $.ajax({
+            url: 'https://pokeapi.co/api/v1' + dataString,
+            method: 'GET', // or GET
+            dataType : "json",
+            success: function(msg) {
+                var x = msg['name'] !== undefined ? msg['name'] : msg['name'];
+                //var y = msg['abilities'] !== undefined ? msg['ability'] : msg['name'];
+
+                /*if msg['name'] !== undefined:
+                    x = msg['name']
+                else:
+                    x = msg['ability']*/
+
+
+
+                $('#text').attr('text','text: ' + x);
+
+
+            }
+        });
+    }
+
+
+
+
+/*$(document).ready(function () {
+
+    for(var i = 1; i < 4; i++){
+        document.getElementById('box' + i).addEventListener('mouseemter', function () {
+            $(this).attr('color', 'red')
+            getData(this);
+        });
+        document.getElementById('box' + i).addEventListener('mouseleave', function () {
+            $(this).attr('color', 'blue')
+            getData(this);
+        });
+
+
+    }
+
+    $.ajax({
+        url: 'https://swapi.co/api' + dataString,
+        method: 'GET', // or GET
+        dataType: "json",
+        succes: function(msg){
+            var x = msg['name'] !== undefined ? msg['name'] : msg['title'];
+
+            $('#text'.attr('text', 'text: ' + x));
+        }
     })
-    
-    bal.addEventListener('mouseenter', function () {
-        document.getElementById("panonoBalText").setAttribute('visible', 'true')
-    });
 
-    bal.addEventListener('mouseleave', function () {
-        document.getElementById("panonoBalText").setAttribute('visible', 'false')
-        console.log("leave")
-    });
-
-    /*bank_kamer_links.addEventListener('mouseenter', function () {
-        document.getElementById("panonoBalText").setAttribute('visible', 'false')
-    });
-
-    bank_kamer_links.addEventListener('mouseleave', function () {
-        document.getElementById("panonoBalText").setAttribute('visible', 'true')
-        console.log("leave")
-    });
     //kleur van het behang kiezen
     /*kleurKamerWit.addEventListener('mouseenter', function () {
         for(i in kamer.children){
@@ -149,10 +215,6 @@ $(document).ready(function () {
             }
         };
     });
-
-
-
-
 
     //Het laten zien van de banken in de kamer
     $(bank_kamer_links).attr('visible', true);
